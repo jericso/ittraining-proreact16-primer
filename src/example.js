@@ -1,5 +1,11 @@
-function myFunc(name) {
-  return "Hello " + name + ".";
+function myFunc(nameFunction) {
+  return "Hello " + nameFunction() + ".";
 }
 
-console.log(myFunc("Adam"));
+function printName(nameFunction, printFunction) {
+  printFunction(myFunc(nameFunction));
+}
+
+printName(function () {
+  return "Adam";
+}, console.log);
