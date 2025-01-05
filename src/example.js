@@ -1,6 +1,16 @@
-function myFunc(name, weather) {
+/* function myFunc(name, weather = "raining") {
   console.log("Hello " + name + ".");
   console.log("It is " + weather + " today.");
 }
 
-myFunc("Adam", "sunny");
+myFunc("Adam"); */
+
+function myFunc(name, weather, ...extraArgs) {
+  console.log("Hello " + name + ".");
+  console.log("It is " + weather + " today.");
+  for (let i = 0; i < extraArgs.length; i++) {
+    console.log("Extra Arg: " + extraArgs[i]);
+  }
+}
+
+myFunc("Adam", "sunny", "one", "two", "three");
